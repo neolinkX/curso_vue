@@ -6,6 +6,17 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <div id="app"> </div>
+    <script>
+    const vm = Vue.createApp({
+            data(){
+                return {
+                    texto: "Textirijillo"
+                }
+            },
+            template: `<div>{{texto}}</div>`
+        }).mount("#app");
+    </script>
 </body>
 </html>
