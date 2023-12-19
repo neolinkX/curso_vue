@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <div id="app"></div>
+    <script>
+    vm = Vue.createApp({
+            data(){
+                return{
+                    evn: "click",
+                    counter: 0
+                };
+            },
+            methods:{
+                increment(){
+                    this.counter++;
+                },
+                decrement(){
+                    this.counter--;
+                }
+            },
+         template: `<div v-on:[evn].prevent="increment" v-on:keyup="decrement" ><button>{{counter}}</button></div>`
+        }).mount("#app");
+    </script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <div id="app"></div>
+    
+    <script>
+        vm = Vue.createApp({
+            data(){
+             return {
+                apellido1: "Sánchez",
+                apellido2: "Perez",
+                nombre: "Paco",
+                ahora: new Date()
+             }; 
+            },
+            computed:{
+                nombreCompleto(){
+                    return this.apellido1+" "+this.apellido2+" "+this.nombre;
+                },
+                diaHoy(){
+                    return this.ahora.toLocaleDateString();
+                }
+            },
+            template: `
+            <div>Nombre Completo</div>
+            <div>{{nombreCompleto}}</div>
+            <div>Día de hoy</div>
+            <div>{{diaHoy}}</div>    
+            `    
+        }).mount("#app");
+    </script>
+</body>
+</html>
